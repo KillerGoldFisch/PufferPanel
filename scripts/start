@@ -1,0 +1,21 @@
+#!/bin/sh
+
+service ssh start
+service nginx start
+service mysql start
+service php7.0-fpm start
+
+if [ ! -f /firstrun.txt ]
+then
+    touch /firstrun.txt
+    echo "Install PufferPanel"
+    mkdir /etc/pufferd
+    touch /etc/pufferd/config.json
+    chmod -R 777 /etc
+    cd /etc/pufferpanel
+    expect /etc/install
+    echo "DONE"
+fi
+
+cd /srv/pufferd/
+./pufferd --config /etc/pufferd/config.json
