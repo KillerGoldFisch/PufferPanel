@@ -13,4 +13,4 @@ expect "Username: " { send "$env(ADMIN_NAME)\n" }
 expect "Email: " { send "$env(ADMIN_EMAIL)\n" }
 expect "Password: " { send "$env(ADMIN_PW)\n" }
 
-expect "Would you like to thank us? Each thanks gives us the motivation to provide this software to you."  { send "Y\n" }
+expect "Would you like to thank us? Each thanks gives us the motivation to provide this software to you."  { send "Y" }
