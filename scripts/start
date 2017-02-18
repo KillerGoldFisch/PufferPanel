@@ -12,7 +12,7 @@ then
     echo "Install PufferPanel"
     cd /etc/pufferpanel
     expect /etc/install
-    rm /etc/expect
+    rm /etc/install
     echo "DONE"
 fi
 
