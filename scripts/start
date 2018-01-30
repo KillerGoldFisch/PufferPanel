@@ -10,12 +10,11 @@ if [ ! -f /firstrun.txt ]
 then
     touch /firstrun.txt
     echo "Install PufferPanel"
-    cd /etc/pufferpanel
-    expect /etc/install
-    rm /etc/install
+    cd /srv/pufferpanel
+    expect /srv/install
     echo "DONE"
 fi
 
 # Start pufferd and pass the stdio to the container stdio
-cd /srv/pufferd/
-./pufferd --config /etc/pufferd/config.json
+#cd /srv/pufferd/
+pufferd --config /etc/pufferd/config.json -run
